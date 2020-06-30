@@ -52,8 +52,8 @@ li a{
 
 /* Set Img to Scale with Container */
 .imgclass{
-    width: 100%; /* <-- Will Not Scale Down Without Basis */
-    height: 100px;
+    width: 100%;
+    height: 200px;
     object-fit: scale-down;
 }
 
@@ -86,14 +86,13 @@ li a{
     text-decoration: none;
 }
 
-/* Add or Overwrite These Properties on Trigger */
-.searchbox:hover > .searchbar{
-    width: 300px;
-    padding: 0 6px;
-}
-
-.searchbox:hover > .searchbtn{
-    background: white;
+/* Form for Submitting Input in Search Bar */
+.form{
+    background: none;
+    float: left;
+    border-radius: 40px;
+    transition: 0.4s;
+    width: 0px;
 }
 
 /* Set the Search Bar >> The Place You Type In */
@@ -102,11 +101,38 @@ li a{
     background: none;
     outline: none;
     float: left;
-    padding: 0; 
-    font-size: 16px;
+    font-size: 14px;
+    border-radius: 40px;
     transition: 0.4s;
     line-height: 40px;
     width: 0px;
+}
+
+/* Add or Overwrite These Properties on Trigger */
+.searchbox:hover > .searchbtn{
+    background: white;
+}
+
+.searchbox:hover > .form{
+    width: 300px;
+}
+
+.searchbox:hover > .form > .searchbar{
+    width: 300px;
+    padding: 0 5px;
+}
+
+.form:focus-within{
+    width: 300px;
+}
+
+.searchbar:focus{
+    width: 300px;
+    padding: 0 5px;
+}
+
+.form:focus-within + a{
+    background: white;
 }
 
 /*---------------------------------------------------------------------*/
